@@ -1,0 +1,27 @@
+docker run -d -p 6379:6379 --name redis redis:6.2.6
+
+docker run -p 3306:3306 --name mysql -e MYSQL_ROOT_PASSWORD=fourkeys -d mysql:8.0.31
+
+https://github.com/GoogleCloudPlatform/fourkeys
+https://github.com/gin-gonic/gin
+https://github.com/ggicci/httpin
+https://github.com/adjust/rmq
+https://github.com/go-redis/redis
+
+https://github.com/golang/go/issues/57185
+
+https://medium.com/firebase-developers/using-the-unnest-function-in-bigquery-to-analyze-event-parameters-in-analytics-fb828f890b42
+https://towardsdatascience.com/how-to-work-with-json-data-in-mysql-11672e4da7e9
+https://dev.mysql.com/doc/refman/8.0/en/json-table-functions.html
+
+
+CREATE TABLE `fourkeys`.`events_raw` (
+  `signature` VARCHAR(45) NOT NULL,
+  `id` VARCHAR(45) NOT NULL,
+  `event_type` VARCHAR(15) NOT NULL,
+  `metadata` JSON NOT NULL,
+  `time_created` TIMESTAMP NOT NULL,
+  `msg_id` VARCHAR(45) NOT NULL,
+  `source` VARCHAR(15) NOT NULL,
+  PRIMARY KEY (`signature`));
+
